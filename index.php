@@ -1,5 +1,5 @@
 <?php
-echo "tvt";
+echo "tvt:".getenv('OPENSHIFT_MYSQL_DB_HOST');
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -7,7 +7,7 @@ echo "tvt";
     getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
     getenv('OPENSHIFT_MYSQL_DB_PORT')
 );*/
-$servername = 'http://mysql-kang.0ec9.hackathon.openshiftapps.com/';
+$servername = 'mysql-kang.0ec9.hackathon.openshiftapps.com';
 $username = 'cakephp';
 $password = 'q3xhacvM6G6qSrg3';
 $database = 'default';
