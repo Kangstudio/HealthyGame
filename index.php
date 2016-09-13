@@ -12,17 +12,16 @@ $username = 'cakephp';
 $password = 'q3xhacvM6G6qSrg3';
 $database = 'default';*/
 
-$servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
-$username = getenv("DATABASE_USER");
-$password = getenv("DATABASE_PASSWORD");
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    header("HTTP/1.1 503 Service Unavailable");
-    die("Connection failed: " . $conn->connect_error);
+$dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
+$dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
+$dbuser = getenv("OPENSHIFT_EXTMYSQL_DB_USERNAME");
+$dbpwd = getenv("OPENSHIFT_EXTMYSQL_DB_PASSWORD");
+$dbname = getenv("OPENSHIFT_EXTMYSQL_DB_NAME");
+$connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
+if (!$connection) {
+  echo "Could not connect to database";
+} else {
+  echo "Connected to database.<br>";
 }
 echo "OK";
 echo "tvt2";
