@@ -1,5 +1,5 @@
 <?php
-echo "tvt:";
+echo "tvt:2";
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -13,13 +13,13 @@ $password = 'q3xhacvM6G6qSrg3';
 $database = 'default';
 
 // Create connection
-/*$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
     header("HTTP/1.1 503 Service Unavailable");
     die("Connection failed: " . $conn->connect_error);
-}*/
+}
 /*
 $dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
 $dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
