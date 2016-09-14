@@ -1,5 +1,5 @@
 <?php
-echo "tvt:3";
+echo "tvt:4";
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -13,7 +13,7 @@ $password = 'kangpedometer';
 $database = 'pedometer';
 
 // Create connection
-$conn = new mysqli("$servername", "$username", "$password", "$database");
+$conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
@@ -34,3 +34,4 @@ if (!$connection) {
 }*/
 echo "OK";
 echo "tvt2";
+?>
