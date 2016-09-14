@@ -1,5 +1,5 @@
 <?php
-echo "tvt-10";
+echo "tvt-11";
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -22,12 +22,12 @@ if ($conn->connect_error) {
 }*/
 
 
-$dbhost = getenv("172.30.113.88");
-$dbport = getenv("3306");
-$dbuser = getenv("kang");
-$dbpwd = getenv("kangpedometer");
-$dbname = getenv("pedometer");
-$connection = new mysqli($dbhost.":".$dbport, $dbuser, $dbpwd, $dbname);
+$dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
+$dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
+$dbuser = getenv("OPENSHIFT_EXTMYSQL_DB_USERNAME");
+$dbpwd = getenv("OPENSHIFT_EXTMYSQL_DB_PASSWORD");
+$dbname = getenv("OPENSHIFT_EXTMYSQL_DB_NAME");
+$connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 if (!$connection) {
   echo "Could not connect to database";
 } else {
