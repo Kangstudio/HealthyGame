@@ -1,16 +1,16 @@
 <?php
 
-echo "OK-8";
+echo "OK-9";
 $servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
 $username = getenv("DATABASE_USER");
 $password = getenv("DATABASE_PASSWORD");
 
-$servername = getenv(strtoupper(getenv("mysql"))."172.30.113.88");
-$username = getenv("kang");
-$password = getenv("kangpedometer");
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
+$dbhost = getenv("172.30.113.88");
+$dbport = getenv("3306");
+$dbuser = getenv("kang");
+$dbpwd = getenv("kangpedometer");
+$dbname = getenv("pedometer");
+$conn = mysqli($dbhost.":".$dbport, $dbuser, $dbpwd);
 
 // Check connection
 if ($conn->connect_error) {
