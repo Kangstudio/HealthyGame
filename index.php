@@ -1,5 +1,5 @@
 <?php
-echo "tvt:5";
+echo "tvt:6";
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -7,7 +7,7 @@ echo "tvt:5";
     getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
     getenv('OPENSHIFT_MYSQL_DB_PORT')
 );*/
-$servername = getenv('mysql-ka.0ec9.hackathon.openshiftapps.com');
+/*$servername = getenv('mysql-ka.0ec9.hackathon.openshiftapps.com');
 $username = getenv('kang');
 $password = getenv('kangpedometer');
 $database = getenv('pedometer');
@@ -19,13 +19,20 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     header("HTTP/1.1 503 Service Unavailable");
     die("Connection failed: " . $conn->connect_error);
-}
-/*
+}*/
+
 $dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
 $dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
 $dbuser = getenv("OPENSHIFT_EXTMYSQL_DB_USERNAME");
 $dbpwd = getenv("OPENSHIFT_EXTMYSQL_DB_PASSWORD");
 $dbname = getenv("OPENSHIFT_EXTMYSQL_DB_NAME");
+
+echo "dbhost:".$dbhost;
+echo "dbport:".$dbport;
+echo "dbuser:".$dbuser;
+echo "dbpwd:".$dbpwd;
+echo "dbname:".$dbname;
+/*
 $connection = mysql_connect($dbhost.":".$dbport, $dbuser, $dbpwd);
 if (!$connection) {
   echo "Could not connect to database";
