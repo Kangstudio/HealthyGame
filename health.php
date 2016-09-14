@@ -1,6 +1,6 @@
 <?php
 
-echo "OK-11";
+echo "OK-12";
 $servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
 $username = getenv("DATABASE_USER");
 $password = getenv("DATABASE_PASSWORD");
@@ -16,7 +16,8 @@ $username = getenv("DATABASE_USER");
 $password = getenv("DATABASE_PASSWORD");
 
 // Create connection
-$conn = new mysqli($servername, $username, $password);
+//$conn = new mysqli($servername, $username, $password);
+$conn = new mysqli('172.30.113.88:3306', 'kang', 'kangpedometer', 'pedometer');
 
 // Check connection
 if ($conn->connect_error) {
