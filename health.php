@@ -1,11 +1,11 @@
 <?php
 
-echo "OK-3";
+echo "OK-4";
 $servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
 $username = getenv("DATABASE_USER");
 $password = getenv("DATABASE_PASSWORD");
 
-$servername = getenv(strtoupper(getenv("mysql"))."172.30.113.88");
+$servername = getenv("172.30.113.88");
 $username = getenv("kang");
 $password = getenv("kangpedometer");
 
