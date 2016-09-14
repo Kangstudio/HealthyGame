@@ -1,6 +1,6 @@
 <?php
 
-echo "OK-9";
+echo "OK-10";
 $servername = getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST");
 $username = getenv("DATABASE_USER");
 $password = getenv("DATABASE_PASSWORD");
@@ -10,7 +10,7 @@ $dbport = getenv("3306");
 $dbuser = getenv("kang");
 $dbpwd = getenv("kangpedometer");
 $dbname = getenv("pedometer");
-$conn = mysqli($dbhost.":".$dbport, $dbuser, $dbpwd);
+$conn = new mysqli($dbhost.":".$dbport, $dbuser, $dbpwd);
 
 // Check connection
 if ($conn->connect_error) {
