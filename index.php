@@ -7,7 +7,7 @@ echo "tvt:2";
     getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
     getenv('OPENSHIFT_MYSQL_DB_PORT')
 );*/
-/*$servername = 'mysql-ka.0ec9.hackathon.openshiftapps.com';
+$servername = 'mysql-ka.0ec9.hackathon.openshiftapps.com';
 $username = 'kang';
 $password = 'kangpedometer';
 $database = 'pedometer';
@@ -19,7 +19,7 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     header("HTTP/1.1 503 Service Unavailable");
     die("Connection failed: " . $conn->connect_error);
-}*/
+}
 /*
 $dbhost = getenv("OPENSHIFT_EXTMYSQL_DB_HOST");
 $dbport = getenv("OPENSHIFT_EXTMYSQL_DB_PORT");
