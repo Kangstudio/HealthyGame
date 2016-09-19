@@ -13,12 +13,12 @@ $database = getenv('pedometer');
 
 // Create connection
 //$conn = new mysqli($servername, $username, $password, $database);
-$conn = new mysqli('172.30.113.88', 'kang', 'kangpedometer', 'pedometer');
+$con = new mysqli('172.30.113.88', 'kang', 'kangpedometer', 'pedometer');
 
 // Check connection
-if ($conn->connect_error) {
+if ($con->connect_error) {
     header("HTTP/1.1 503 Service Unavailable");
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $con->connect_error);
 }
 
 
