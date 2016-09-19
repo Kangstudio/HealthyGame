@@ -1,5 +1,4 @@
 <?php
-echo "tvt-12";
 /*$mysqli = mysqli_connect(
     getenv('OPENSHIFT_MYSQL_DB_HOST'), 
     getenv('OPENSHIFT_MYSQL_DB_USERNAME'), 
@@ -23,6 +22,5 @@ if ($conn->connect_error) {
 }
 
 
-echo "OK";
-echo "tvt2";
+echo "OK - pedometer";
 ?>
