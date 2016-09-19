@@ -25,7 +25,8 @@ if($uuid){
 		while($row = mysqli_fetch_array($result))
 		{
 			if($name && $name != $row["name"])$updateName = "name = '$name'";
-			if(isset($coins) && $coins != $row["coins"])$updateCoins = "coins = '$coins'";
+			if($coins >0 && $coins < 10)$coins = "0".$coins;
+			if($coins !== $row["coins"])$updateCoins = "coins = '$coins'";
 			if($updateName && $updateCoins)$updateName = $updateName.", ";
 			if($updateName || $updateCoins){
 				if($test)if($updateName)echo "<br>updateName: ".$row["name"]." -> ".$name;
@@ -73,9 +74,11 @@ if($getLeadeboard){
 		$query = "SELECT coins FROM ".$table." WHERE coins >= ".$coins." ORDER BY coins DESC";
 		$result = $con->query($query);
 		$num_rows = mysqli_num_rows($result);
-		if($test)echo "<br>You ".$num_rows.": coins = ".$coins;
+		echo "window.pedometer.serverScript.yourRanking = ".$num_rows.";";
+		//$data = array($name, $coins, true);
+		//array_push($leadeboardData,$data);
 	}
 	$leadeboardData = json_encode($leadeboardData);
-	if($test)echo "<br>leadeboardData:".$leadeboardData;
+	echo "window.pedometer.serverScript.leadeboardData = ".$leadeboardData.";";
 }
 ?>
