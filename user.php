@@ -56,22 +56,24 @@ if($uuid){
 //getLeadeboard
 if($getLeadeboard){
 	if($getLeadeboard > 100)$getLeadeboard = 100;
-	$leadeboardData = array();
+	$leadeboardData = (object)array();
 	$inTop = false;
 	if($test)echo "<br>Get Leadeboard:".$getLeadeboard;
 	$query = "SELECT * FROM ".$table." ORDER BY coins DESC LIMIT ".$getLeadeboard;
 	$result = $con->query($query);
 	if ($result->num_rows > 0){
+		$count = 0;
 		while($row = mysqli_fetch_array($result))
 		{
-			if($test)echo "<br>".$row["coins"];
+			if($test)echo "<br>".$row["uuid"]." - ".$row["coins"];
 			if($uuid && $uuid == $row["uuid"]){
 				$inTop = true;
 				$data = array($row["name"], intval($row["coins"]), true);
 			} else{
 				$data = array($row["name"], intval($row["coins"]));
 			}
-			array_push($leadeboardData,$data);
+			$count++;
+			$leadeboardData->$count = $data;
 		}
 	}
 	
