@@ -25,7 +25,9 @@ if($uuid){
 		while($row = mysqli_fetch_array($result))
 		{
 			if($name && $name != $row["name"])$updateName = "name = '$name'";
-			if($coins >0 && $coins < 10)$coins = "0".$coins;
+			$num_length = strlen((string)$coins);
+			$num_length2 = substr("0000000000", $num_length);
+			$coins = $num_length2.$coins;
 			if($coins !== $row["coins"])$updateCoins = "coins = '$coins'";
 			if($updateName && $updateCoins)$updateName = $updateName.", ";
 			if($updateName || $updateCoins){
@@ -41,6 +43,9 @@ if($uuid){
 		}
 	} else{
 		if($test)echo "Not exist:".$uuid."-".$name."-".$coins;
+		$num_length = strlen((string)$coins);
+		$num_length2 = substr("0000000000", $num_length);
+		$coins = $num_length2.$coins;
 		$sql = "INSERT INTO ".$table." (uuid, name, coins) VALUES ('$uuid', '$name', '$coins')";
 			if ($con->query($sql) === TRUE) {
 				if($test)echo "<br>Registration successful.";
@@ -62,9 +67,9 @@ if($getLeadeboard){
 			if($test)echo "<br>".$row["coins"];
 			if($uuid && $uuid == $row["uuid"]){
 				$inTop = true;
-				$data = array($row["name"], $row["coins"], true);
+				$data = array($row["name"], intval($row["coins"]), true);
 			} else{
-				$data = array($row["name"], $row["coins"]);
+				$data = array($row["name"], intval($row["coins"]));
 			}
 			array_push($leadeboardData,$data);
 		}
