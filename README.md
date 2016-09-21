@@ -1,1 +1,1 @@
-Pedometer on OpenShift
+Pedometer Fun on OpenShift
