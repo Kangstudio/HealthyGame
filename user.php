@@ -81,11 +81,11 @@ if($getLeadeboard){
 		$query = "SELECT coins FROM ".$table." WHERE coins >= ".$coins." ORDER BY coins DESC";
 		$result = $con->query($query);
 		$num_rows = mysqli_num_rows($result);
-		echo "window.pedometer.serverScript.yourRanking = ".$num_rows.";";
+		echo "window.pedometerApp.serverScript.yourRanking = ".$num_rows.";";
 		//$data = array($name, $coins, true);
 		//array_push($leadeboardData,$data);
 	}
 	$leadeboardData = json_encode($leadeboardData);
-	echo "window.pedometer.serverScript.leadeboardData = ".$leadeboardData.";";
+	echo "window.pedometerApp.serverScript.leadeboardData = ".$leadeboardData.";";
 }
 ?>
