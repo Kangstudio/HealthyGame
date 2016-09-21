@@ -2,9 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Pedometer fun on Openshift online</title>
 </head>
-
+<style>
+body{background:#000; color:#FFF; font-family:Arial, Helvetica, sans-serif;}
+</style>
 <body>
 <?php
 // Create connection
@@ -16,7 +18,7 @@ if ($con->connect_error) {
 }*/
 ?>
 <h1>Pedometer fun on Openshift online</h1>
-<p>Adroid application: <a href="http://pedometer-ka.0ec9.hackathon.openshiftapps.com/client_application.apk">http://pedometer-ka.0ec9.hackathon.openshiftapps.com/client_application.apk</a></p>
+<p>Android application: <a href="http://pedometer-ka.0ec9.hackathon.openshiftapps.com/client_application.apk">http://pedometer-ka.0ec9.hackathon.openshiftapps.com/client_application.apk</a></p>
 <h1>Video:</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hWa04ERTEI4" frameborder="0" allowfullscreen></iframe>
 </body>
